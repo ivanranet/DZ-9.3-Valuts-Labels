@@ -1,4 +1,3 @@
-from warnings import showwarning
 import requests
 import json
 from tkinter import *
@@ -46,7 +45,7 @@ def exchange():
 
                 if t_code in data_2['rates']:
                     exchange_rate_2 = data_2['rates'][t_code]
-                    t_name = cur[t_code]
+#                    t_name = cur[t_code]
                     b_2_name = cur[b_2_code]
 
                     mb.showinfo('Курс обмена',
@@ -56,7 +55,7 @@ def exchange():
         except Exception as e:
             mb.showerror('Ошибка', f'Произошла ошибка: {e}.')
     else:
-        showwarning('Внимание!', 'Введите код валюты.')
+        mb.showwarning('Внимание!', 'Введите код валюты.')
 
 
 cur = {
